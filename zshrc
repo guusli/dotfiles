@@ -58,6 +58,12 @@ fkill() {
 		echo $pid | xargs kill -${1:-9}
 	fi
 }
+
+mkcd() {
+    mkdir -p -- "$1" &&
+      cd -P -- "$1"
+}
+
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 export PATH="$HOME/.bin:$PATH"
