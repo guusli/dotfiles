@@ -1,1 +1,11 @@
-/Users/gustavlindberg/.dotfiles/atom/config.cson
+"*":
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
+  "exception-reporting":
+    userId: "36b4b11c-ef04-44fc-a8d7-b4cb3d358883"
+  welcome:
+    showOnStartup: false
