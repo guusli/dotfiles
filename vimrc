@@ -26,9 +26,13 @@ syntax enable
 set tabstop=2
 set softtabstop=2
 set expandtab  "tabs are spaces"
+:set shiftwidth=2
+:set autoindent
+:set smartindent
 
 set number  "show line numbers"
 set cursorline 
+set backspace=indent,eol,start
 
 filetype plugin indent on
 
