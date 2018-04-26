@@ -1,0 +1,15 @@
+advanced-open-file@0.16.8
+busy-signal@1.4.3
+emmet@2.4.3
+git-time-machine@1.5.9
+highlight-selected@0.13.1
+intentions@1.1.5
+linter@2.2.0
+linter-eslint@8.4.1
+linter-stylelint@4.2.0
+linter-ui-default@1.7.1
+merge-conflicts@1.4.5
+pigments@0.40.2
+prettier-atom@0.53.0
+vim-mode-plus@1.32.0
+
