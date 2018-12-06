@@ -1,19 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'kchmck/vim-coffee-script'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/syntastic'
-Plug 'ajh17/VimCompletesMe'
-Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ternjs/tern_for_vim'
-Plug 'zeekay/vim-beautify'
 Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-sensible'
 
 call plug#end()
 
