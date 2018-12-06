@@ -38,7 +38,7 @@
 	trustExitCode = true
 [user]
 	name = Gustav Lindberg
-	email = gustav.lindberg@mynewsdesk.com
+	email = gustav@gustavlindberg.se
 [merge]
 	tool = opendiff
 [diff]
@@ -52,3 +52,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[include]
+    path = .gitconfig.local
