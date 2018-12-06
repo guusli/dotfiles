@@ -1,0 +1,8 @@
+alias hyper ctrl;alt;cmd
+
+# Keypad row 13 = halves
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+bind left:${hyper} ${lefthalf}
+
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+bind right:${hyper} ${righthalf}
