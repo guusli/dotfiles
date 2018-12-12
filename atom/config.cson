@@ -1,11 +1,86 @@
 "*":
   core:
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
-    themes: [
-      "one-light-ui"
-      "solarized-light-syntax"
-    ]
   "exception-reporting":
     userId: "36b4b11c-ef04-44fc-a8d7-b4cb3d358883"
+  "expand-region": {}
+  "goto-definition":
+    performanceMode: true
+  hyperclick:
+    darwinTriggerKeys: "shiftKey,metaKey"
+  "jump-to-import":
+    openInSeparatePane: false
+    usePendingPane: false
+  "linter-ui-default":
+    showPanel: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    useEslint: true
   welcome:
     showOnStartup: false
+".js.source":
+  "expand-region":
+    commands: [
+      {
+        command: "editor:select-word"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-word-include-dash"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-word-include-dash-and-dot"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-tags"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-single-quotes"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-around-single-quotes"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-double-quotes"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-around-double-quotes"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-parentheses"
+        recursive: true
+      }
+      {
+        command: "expand-region:select-around-parentheses"
+        recursive: true
+      }
+      {
+        command: "expand-region:select-inside-curly-brackets"
+        recursive: true
+      }
+      {
+        command: "expand-region:select-around-curly-brackets"
+        recursive: true
+      }
+      {
+        command: "expand-region:select-inside-square-brackets"
+        recursive: true
+      }
+      {
+        command: "expand-region:select-around-square-brackets"
+        recursive: true
+      }
+      {
+        command: "emmet:balance-outward"
+        recursive: true
+      }
+    ]
