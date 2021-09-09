@@ -22,7 +22,7 @@
     rba = rebase --abort
     rbc = rebase --continue
 	
-    u = "!f(){ git fetch && git pull --rebase;};f;"
+    u = pull --rebase --autostash
     
     # list branches sorted by last modified
     b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
