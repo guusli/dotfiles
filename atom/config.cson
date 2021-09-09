@@ -12,11 +12,12 @@
   "jump-to-import":
     openInSeparatePane: false
     usePendingPane: false
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
+      isDisabledIfNotInPackageJson: true
+      showInStatusBar: true
     useEslint: true
   welcome:
     showOnStartup: false
