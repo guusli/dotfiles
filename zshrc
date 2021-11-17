@@ -1,10 +1,6 @@
-source <(antibody init)
 
-eval "$(rbenv init -)"
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
-  
-export POW_EXT_DOMAINS=localhost
+source <(antibody init)
+eval "$(fnm env)"
 
 HISTFIL=~/.histfile
 HISTSIZE=1000
