@@ -63,3 +63,7 @@ mkcd() {
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 export PATH="$HOME/.bin:$PATH"
+
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
