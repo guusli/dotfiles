@@ -1,6 +1,0 @@
-'atom-text-editor':
-  'alt-up': 'expand-region:expand',
-  'alt-down': 'expand-region:shrink'
-
-'atom-workspace':
-  'cmd-shift-space': 'jump-to-import:go-to-module'
