@@ -3,24 +3,20 @@
     l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 
     a = add
-    ap = add -p
     c = commit --verbose
-    ca = commit -a --verbose
     cm = commit -m
-    cam = commit -a -m
     m = commit --amend --verbose
     s = status
 
     d = diff
-    ds = diff --stat
-    dc = diff --cached
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     co = checkout
-    cob = checkout -b
+    r = restore
     rb = rebase
-    prb = pull --rebase
     rba = rebase --abort
     rbc = rebase --continue
+
+    last = log -1 HEAD --stat
 	
     u = pull --rebase --autostash
     
