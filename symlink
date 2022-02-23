@@ -1,6 +1,6 @@
 #!/bin/sh
 
-my_array=(vimrc gitmessage zshrc gitconfig gitconfig.code)
+my_array=(vimrc gitmessage zshrc gitconfig gitconfig.code p10k.zsh)
 
 for i in "${my_array[@]}"; do ln -si $(pwd)//$i ~/.$i ; done
 

@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 
 source <(antibody init)
 eval "$(fnm env)"
@@ -23,15 +30,15 @@ setopt inc_append_history
 # Reloads the history whenever you use it
 # setopt share_history
 
-autoload -U promptinit; promptinit
+#autoload -U promptinit; promptinit
 
 antibody bundle mafredri/zsh-async
-antibody bundle sindresorhus/pure
 antibody bundle zsh-users/zsh-syntax-highlighting
 antibody bundle peterhurford/git-it-on.zsh
 antibody bundle zsh-users/zsh-completions
 antibody bundle Tarrasch/zsh-bd
 antibody bundle buonomo/yarn-completion
+antibody bundle romkatv/powerlevel10k
 
 export EDITOR=vim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -67,3 +74,5 @@ export PATH="$HOME/.bin:$PATH"
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

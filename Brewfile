@@ -1,21 +1,19 @@
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
-cask "1password"
 cask "automute"
 cask "firefox"
 cask "fork"
 cask "insomnia"
 cask "iterm2"
 cask "raycast"
-cask "spotify"
 cask "visual-studio-code"
 
 brew "git"
 
 brew "vim"
 brew "zsh"
-brew "getantibody/tap/antibody"
+brew "antibody"
 
 brew "rbenv"
 brew "fnm"
