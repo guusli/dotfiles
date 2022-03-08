@@ -1,0 +1,38 @@
+#!/usr/bin/sh
+
+printHeading() {
+    printf "\n\e[0;36m$1\e[0m \n"
+}
+
+
+printHeading "Installing homebrew"
+
+# Check for Homebrew,
+# Install if we don't have it
+if test ! $(which brew); then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else 
+  echo "Homebrew already installed. Skipping."
+fi
+
+echo "Updating homebrew..."
+brew update
+echo "Installing packages..."
+brew bundle
+
+printHeading "Installing Command Line Tools"
+if xcode-select -p 1>/dev/null; then
+echo "Command Line Tools already installed. Skipping."
+else
+  xcode-select --install  
+fi
+
+printHeading "Setting OSX settings"
+sh mac
+killall Dock
+killall Finder
+killall iTerm2
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+printHeading "Remember to add the Raycast config file manually!"
+
