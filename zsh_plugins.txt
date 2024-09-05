@@ -6,3 +6,4 @@ Tarrasch/zsh-bd
 chrisands/zsh-yarn-completions
 zuxfoucault/colored-man-pages_mod
 favware/zsh-lerna
+romkatv/powerlevel10k
