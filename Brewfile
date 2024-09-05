@@ -1,22 +1,22 @@
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
 cask "automute"
-cask "firefox"
 cask "fork"
-cask "insomnia"
+cask "httpie"
 cask "iterm2"
 cask "raycast"
 cask "visual-studio-code"
+cask "slack"
 
 brew "git"
 
 brew "vim"
+brew "neovim"
 brew "zsh"
-brew "antibody"
+brew "antidote"
 
-brew "rbenv"
 brew "fnm"
+brew "deno"
 
 # Image/video handling
 brew "imagemagick"
@@ -29,13 +29,15 @@ brew "fzf"
 brew "ripgrep"
 brew "the_silver_searcher"
 brew "fd"
-brew "autojump"
+brew "fasd"
 brew "wget"
 brew "tree"
+brew "rm-improved"
 
 # Git
 brew "gh"
 brew "diff-so-fancy"
 
 # Fonts
-brew "font-inter"
+cask "font-inter"
+cask "font-lato"
