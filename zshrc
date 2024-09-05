@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-source <(antibody init)
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 eval "$(fnm env)"
 
 HISTFIL=~/.histfile
@@ -25,6 +25,16 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
   '+l:|?=** r:|?=**'
 
 
+# Brew completions
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Appends every command to the history file once it is executed
 setopt inc_append_history
 # Reloads the history whenever you use it
@@ -32,17 +42,10 @@ setopt inc_append_history
 
 #autoload -U promptinit; promptinit
 
-antibody bundle mafredri/zsh-async
-antibody bundle zsh-users/zsh-syntax-highlighting
-antibody bundle peterhurford/git-it-on.zsh
-antibody bundle zsh-users/zsh-completions
-antibody bundle Tarrasch/zsh-bd
-antibody bundle buonomo/yarn-completion
-antibody bundle romkatv/powerlevel10k
+antidote load
 
 export EDITOR=vim
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 fbr() {
 	local branches branch
@@ -54,7 +57,7 @@ fbr() {
 
 fkill() {
 	local pid
-	pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+	pid=$(ps -ef | sed 1d | fzf -m | awk 1'{print $2}')
 
 	if [ "x$pid" != "x"  ]
 	then
@@ -76,3 +79,16 @@ export PATH="$HOME/.bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# fasd
+
+eval "$(fasd --init auto)"
+alias j='fasd_cd -d'
+
+# bun completions
+[ -s "/Users/gustavlindberg/.bun/_bun" ] && source "/Users/gustavlindberg/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/gustavlindberg/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH=/Users/gustavlindberg/.local/bin:$PATH
