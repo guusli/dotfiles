@@ -27,6 +27,14 @@ else
   xcode-select --install  
 fi
 
+if ! command -v bun &> /dev/null; then
+  # bun is not installed, proceed with installation
+  curl -fsSL https://bun.sh/install | bash
+else
+  # bun is already installed
+  echo "bun is already installed."
+fi
+
 printHeading "Setting OSX settings"
 sh mac
 killall Dock
