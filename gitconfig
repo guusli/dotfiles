@@ -15,10 +15,14 @@
     rb = rebase
     rba = rebase --abort
     rbc = rebase --continue
+    rbs = rebase --skip
+    rbm = "!git fetch && git rb origin/master"
+    tr = "!git commit --allow-empty -m 'trigger rebuild'"
 
     last = log -1 HEAD --stat
 	
     u = pull --rebase --autostash
+    rhm = "!git fetch && git reset --hard origin/master"
     
     # list branches sorted by last modified
     b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
@@ -43,6 +47,7 @@
 	template = ~/.gitmessage
 [push]
 	 default = current
+	autoSetupRemote = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
