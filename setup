@@ -27,20 +27,24 @@ else
   xcode-select --install  
 fi
 
+printHeading "Installing Bun"
 if ! command -v bun &> /dev/null; then
-  # bun is not installed, proceed with installation
   curl -fsSL https://bun.sh/install | bash
 else
-  # bun is already installed
-  echo "bun is already installed."
+  echo "Bun is already installed. Skipping."
 fi
 
 printHeading "Setting OSX settings"
 sh mac
+
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+echo "Remember to add the Raycast config file manually! \n"
+echo "Press Enter to restart Dock, Finder and iTerm2 or Ctrl+C to cancel."
+read -r
+
 killall Dock
 killall Finder
 killall iTerm2
-echo "Done. Note that some of these changes require a logout/restart to take effect."
 
-printHeading "Remember to add the Raycast config file manually!"
+
 

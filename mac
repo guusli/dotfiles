@@ -3,7 +3,7 @@
 # Disable press-and-hold for keys in favor of a key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 2 
+defaults write -g KeyRepeat -int 3 
 
 ###############################################################################
 # Finder                                                                      #
@@ -38,15 +38,6 @@ sudo chflags nohidden /Volumes
 
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
-
-###############################################################################
-# Safari                                                                      #
-###############################################################################
-
-# Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 
 ###############################################################################
 # iTerm2                                                                      #
