@@ -27,24 +27,6 @@ else
   xcode-select --install  
 fi
 
-printHeading "Installing Bun"
-if ! command -v bun &> /dev/null; then
-  curl -fsSL https://bun.sh/install | bash
-else
-  echo "Bun is already installed. Skipping."
-fi
-
-printHeading "Installing fasd"
-if ! command -v fasd &> /dev/null; then
-  curl -L -o fasd.tar.gz https://github.com/clvv/fasd/tarball/1.0.1
-  tar -xzf fasd.tar.gz
-  cd clvv-fasd-4822024/
-  sudo make install
-  rm -rf fasd.tar.gz clvv-fasd-4822024/
-else
-  echo "fasd is already installed. Skipping."
-fi
-
 printHeading "Setting OSX settings"
 sh mac
 

@@ -1,4 +1,6 @@
 tap "homebrew/cask-fonts"
+tap "guusli/utils"
+tap "oven-sh/bun"
 
 cask "automute"
 cask "fork"
@@ -17,6 +19,7 @@ brew "antidote"
 
 brew "fnm"
 brew "deno"
+brew "bun"
 
 # Image/video handling
 brew "imagemagick"
@@ -32,6 +35,7 @@ brew "fd"
 brew "wget"
 brew "tree"
 brew "rm-improved"
+brew "fasd-guusli"
 
 # Git
 brew "gh"
