@@ -2,7 +2,6 @@ tap "homebrew/cask-fonts"
 tap "guusli/utils"
 tap "oven-sh/bun"
 
-cask "automute"
 cask "fork"
 cask "httpie"
 cask "iterm2"

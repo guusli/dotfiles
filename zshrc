@@ -80,19 +80,17 @@ export PATH="$HOME/.bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # fasd
+eval "$(fasd --init auto)"
 
-eval "$(fasd --init zsh-ccomp zsh-ccomp-install)"
-
-fasd_cd() {
-  if [ $# -le 1 ]; then
-    fasd "$@"
-  else
-    local _fasd_ret="$(fasd -e 'printf %s' "$@")"
-    [ -z "$_fasd_ret" ] && return
-    [ -d "$_fasd_ret" ] && cd "$_fasd_ret" || printf %s\n "$_fasd_ret"
-  fi
-}
 alias j='fasd_cd -d'
+unalias a
+unalias s
+unalias d
+unalias f
+unalias sd
+unalias sf
+unalias z
+unalias zz
 
 # bun completions
 [ -s "/Users/gustavlindberg/.bun/_bun" ] && source "/Users/gustavlindberg/.bun/_bun"
