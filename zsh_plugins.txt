@@ -1,6 +1,5 @@
 mafredri/zsh-async
 zsh-users/zsh-syntax-highlighting
-peterhurford/git-it-on.zsh
 zsh-users/zsh-completions
 Tarrasch/zsh-bd
 chrisands/zsh-yarn-completions
