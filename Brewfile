@@ -8,6 +8,11 @@ cask "iterm2"
 cask "raycast"
 cask "visual-studio-code"
 cask "slack"
+cask "hyperkey"
+cask "pixelsnap"
+cask "selfcontrol"
+cask "zed"
+cask "arc"
 
 brew "git"
 
@@ -43,3 +48,7 @@ brew "diff-so-fancy"
 # Fonts
 cask "font-inter"
 cask "font-lato"
+cask "font-hack-nerd-font"
+
+# App Store
+mas "Gapplin", id: 768053424
