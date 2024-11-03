@@ -45,6 +45,9 @@ setopt inc_append_history
 antidote load
 
 export EDITOR=vim
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 fbr() {
