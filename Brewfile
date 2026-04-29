@@ -1,4 +1,3 @@
-tap "homebrew/cask-fonts"
 tap "guusli/utils"
 tap "oven-sh/bun"
 
@@ -13,6 +12,10 @@ cask "pixelsnap"
 cask "selfcontrol"
 cask "zed"
 cask "arc"
+cask "figma"
+cask "finicky"
+cask "ghostty"
+cask "lookaway"
 
 brew "git"
 
@@ -40,10 +43,22 @@ brew "wget"
 brew "tree"
 brew "rm-improved"
 brew "fasd-guusli"
+brew "eza"
+brew "lsd"
+brew "jq"
+brew "fastfetch"
+brew "pure"
 
 # Git
 brew "gh"
 brew "diff-so-fancy"
+brew "lazygit"
+
+# Dev tools
+brew "awscli"
+brew "cspell"
+brew "mkcert"
+brew "mas"
 
 # Fonts
 cask "font-inter"
@@ -52,3 +67,4 @@ cask "font-hack-nerd-font"
 
 # App Store
 mas "Gapplin", id: 768053424
+mas "AutoMute", id: 1118136179
