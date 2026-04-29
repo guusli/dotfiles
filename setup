@@ -27,6 +27,9 @@ else
   xcode-select --install  
 fi
 
+printHeading "Symlinking dotfiles"
+sh symlink
+
 printHeading "Setting OSX settings"
 sh mac
 

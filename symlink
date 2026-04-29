@@ -4,3 +4,7 @@ my_array=(vimrc gitmessage zshrc gitconfig gitconfig.code p11k.zsh zsh_plugins.t
 
 for i in "${my_array[@]}"; do ln -si $(pwd)//$i ~/.$i ; done
 
+config_dirs=(ghostty nvim)
+mkdir -p ~/.config
+for d in "${config_dirs[@]}"; do ln -si "$(pwd)/$d" ~/.config/$d ; done
+
