@@ -7,7 +7,7 @@ fi
 
 
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd --shell=zsh --log-level=quiet)"
 
 HISTFIL=~/.histfile
 HISTSIZE=1000
@@ -24,16 +24,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
   '+l:|?=** r:|?=**'
 
-
-# Brew completions
-
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
-fi
 
 # Appends every command to the history file once it is executed
 setopt inc_append_history
@@ -74,6 +64,7 @@ mkcd() {
       cd -P -- "$1"
 }
 
+alias lg="lazygit"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 export PATH="$HOME/.bin:$PATH"

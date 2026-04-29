@@ -16,21 +16,22 @@
     rba = rebase --abort
     rbc = rebase --continue
     rbs = rebase --skip
-    rbm = "!git fetch && git rb origin/master"
+    rbm = "!git fetch && git rb origin/main"
     tr = "!git commit --allow-empty -m 'trigger rebuild'"
 
     last = log -1 HEAD --stat
 	
     u = pull --rebase --autostash
-    rhm = "!git fetch && git reset --hard origin/master"
+    rhm = "!git fetch && git reset --hard origin/main"
     
     # list branches sorted by last modified
     b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
     
-    purge = "!git branch | grep -v "master" | xargs git branch -D"
+    purge = "!git branch | grep -v "main" | xargs git branch -D"
 
     # list aliases
     ls-alias = "!git config -l | grep alias | cut -c 7-"
+	pf = push --force-with-lease
 [core]
 	excludesfile = /Users/gustavlindberg/.gitignore_global
 	editor = vim
@@ -39,8 +40,6 @@
 [user]
 	name = Gustav Lindberg
 	email = gustav@gustavlindberg.se
-[merge]
-	tool = opendiff
 [diff]
 	tool = opendiff
 [commit]
