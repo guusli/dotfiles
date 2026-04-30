@@ -1,7 +1,7 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 printHeading() {
-    printf "\n\e[0;36m$1\e[0m \n"
+    printf "\n\033[0;36m%s\033[0m \n" "$1"
 }
 
 
@@ -9,9 +9,9 @@ printHeading "Installing homebrew"
 
 # Check for Homebrew,
 # Install if we don't have it
-if test ! $(which brew); then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else 
+if ! command -v brew &>/dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
   echo "Homebrew already installed. Skipping."
 fi
 
@@ -21,10 +21,10 @@ echo "Installing packages..."
 brew bundle
 
 printHeading "Installing Command Line Tools"
-if xcode-select -p 1>/dev/null; then
-echo "Command Line Tools already installed. Skipping."
+if xcode-select -p &>/dev/null; then
+  echo "Command Line Tools already installed. Skipping."
 else
-  xcode-select --install  
+  xcode-select --install
 fi
 
 printHeading "Symlinking dotfiles"
@@ -35,12 +35,11 @@ sh mac
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 echo "Remember to add the Raycast config file manually! \n"
-echo "Press Enter to restart Dock, Finder and iTerm2 or Ctrl+C to cancel."
+echo "Press Enter to restart Dock and Finder or Ctrl+C to cancel."
 read -r
 
 killall Dock
 killall Finder
-killall iTerm2
 
 
 

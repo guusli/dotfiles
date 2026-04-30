@@ -1,10 +1,14 @@
 #!/bin/sh
 
-my_array=(vimrc gitmessage zshrc gitconfig gitconfig.code p11k.zsh zsh_plugins.txt wezterm.lua)
+my_array=(vimrc gitmessage zshrc gitconfig gitconfig.code p10k.zsh zsh_plugins.txt wezterm.lua config.ghostty)
 
-for i in "${my_array[@]}"; do ln -si $(pwd)//$i ~/.$i ; done
+for i in "${my_array[@]}"; do ln -si "$(pwd)/$i" ~/."$i" ; done
 
-config_dirs=(ghostty nvim)
+config_dirs=(nvim)
 mkdir -p ~/.config
 for d in "${config_dirs[@]}"; do ln -si "$(pwd)/$d" ~/.config/$d ; done
+
+# Ghostty (macOS native path)
+mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
+ln -sf "$(pwd)/config.ghostty" "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
 

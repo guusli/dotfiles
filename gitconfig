@@ -33,7 +33,7 @@
     ls-alias = "!git config -l | grep alias | cut -c 7-"
 	pf = push --force-with-lease
 [core]
-	excludesfile = /Users/gustavlindberg/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	trustExitCode = true
@@ -44,6 +44,14 @@
 	tool = opendiff
 [commit]
 	template = ~/.gitmessage
+	gpgSign = false
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+	ff = only
+[rebase]
+	autosquash = true
 [push]
 	 default = current
 	autoSetupRemote = true
@@ -60,3 +68,4 @@
 	path = ~/.gitconfig.code
 [rerere]
 	enabled = true
+	autoupdate = true

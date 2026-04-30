@@ -33,18 +33,8 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
-# Show the /Volumes folder
-sudo chflags nohidden /Volumes
+# Show the /Volumes folder (requires admin password)
+# sudo chflags nohidden /Volumes
 
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
-
-###############################################################################
-# iTerm2                                                                      #
-###############################################################################
-
-# Specify the preferences directory
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string ${PWD}"/iterm"
-
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true

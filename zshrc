@@ -16,15 +16,17 @@ eval "$(fnm env --use-on-cd --shell=zsh --log-level=quiet)"
 # zsh-z: alias z to j
 export ZSHZ_CMD=j
 
-HISTFIL=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
 
-# Autocorrect misspelled commands
 setopt correct
-
-# Appends every command to the history file once it is executed
+setopt share_history
+setopt hist_verify
+setopt hist_reduce_blanks
 setopt inc_append_history
+
+eval "$(fnm env --use-on-cd --shell=zsh --log-level=quiet)"
 
 # Setup completion BEFORE antidote so plugins can use compdef
 autoload -Uz compinit
@@ -46,6 +48,8 @@ export LC_ALL=en_US.UTF-8
 
 source <(fzf --zsh)
 
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+
 fbr() {
 	local branches branch
 	branches=$(git branch -a) &&
@@ -56,7 +60,7 @@ fbr() {
 
 fkill() {
 	local pid
-	pid=$(ps -ef | sed 1d | fzf -m | awk 1'{print $2}')
+	pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
 	if [ "x$pid" != "x"  ]
 	then
@@ -81,10 +85,10 @@ export PATH="$HOME/.bin:$PATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
-[ -s "/Users/gustavlindberg/.bun/_bun" ] && source "/Users/gustavlindberg/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Bun
-export BUN_INSTALL="/Users/gustavlindberg/.bun"
+export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export PATH=/Users/gustavlindberg/.local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
