@@ -9,3 +9,4 @@ favware/zsh-lerna
 romkatv/powerlevel10k
 lukechilds/zsh-better-npm-completion
 greymd/docker-zsh-completion
+agkozak/zsh-z

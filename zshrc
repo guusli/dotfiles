@@ -5,9 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Completion cache settings
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zcompcache"
+
 
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 eval "$(fnm env --use-on-cd --shell=zsh --log-level=quiet)"
+
+# zsh-z: alias z to j
+export ZSHZ_CMD=j
 
 HISTFIL=~/.histfile
 HISTSIZE=1000
@@ -16,23 +23,21 @@ SAVEHIST=1000
 # Autocorrect misspelled commands
 setopt correct
 
-# Setup completion
-setopt automenu
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
-autoload -U compinit && compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
-  '+l:|?=** r:|?=**'
-
-
 # Appends every command to the history file once it is executed
 setopt inc_append_history
-# Reloads the history whenever you use it
-# setopt share_history
 
-#autoload -U promptinit; promptinit
+# Setup completion BEFORE antidote so plugins can use compdef
+autoload -Uz compinit
+compinit -C
 
 antidote load
+
+# zsh-z completion (bind alias to completion function)
+compdef _zshz j
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
+zstyle ':completion:*' recent-dirs yes
 
 export EDITOR=vim
 
@@ -74,18 +79,6 @@ export PATH="$HOME/.bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# fasd
-eval "$(fasd --init auto)"
-
-alias j='fasd_cd -d'
-unalias a
-unalias s
-unalias d
-unalias f
-unalias sd
-unalias sf
-unalias z
-unalias zz
 
 # bun completions
 [ -s "/Users/gustavlindberg/.bun/_bun" ] && source "/Users/gustavlindberg/.bun/_bun"
